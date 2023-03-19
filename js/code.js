@@ -1,5 +1,5 @@
-//const urlBase = 'http://159.223.96.127/'; //evans website
-const urlBase = 'https://contact-manager-cop4331-2023.xyz/'; // lances website
+const urlBase = 'http://159.223.96.127/'; //evans website
+// const urlBase = 'https://contact-manager-cop4331-2023.xyz/'; // lances website
 const extension = 'php';
 
 let userId = 0;
@@ -13,7 +13,10 @@ let invalidInput = [];
 let passwordFromSignUp = "";
 let userFromSignUp = "";
 let page = [0, 0, 0, 0]; // Login, signup contact, and edit.
-
+function goHome()
+{
+	window.location.href="contact.html";
+}
 function checkInputs()
 {
 	if (page[0] == 1) {
@@ -135,37 +138,6 @@ function editContact()
 	let eEmail = document.getElementById("editEmail").value;
 
 	let element1;
-		if (/^\s/.test(eName) || /\s$/.test(eName))
-	{
-		document.getElementById("colorAddResult").innerHTML = "Name cannot start or end with a space";
-		if (invalidInput[0] == 0) {
-			element1 = document.getElementById("editName");
-			element1.classList.toggle("invalidBorder");
-			invalidInput[0] = 1;
-		}
-		return;
-	}
-	if (invalidInput[0] == 1) {
-		element1 = document.getElementById("editName");
-		element1.classList.toggle("invalidBorder");
-		invalidInput[0] = 0;
-	}
-	if (/^\s/.test(ePhone) || /\s$/.test(ePhone))
-	{
-		document.getElementById("colorAddResult").innerHTML = "Phone # cannot start or end with a space";
-		if (invalidInput[1] == 0) {
-			element1 = document.getElementById("editPhone");
-			element1.classList.toggle("invalidBorder");
-			invalidInput[1] = 1;
-		}
-		return;
-	}
-	if (invalidInput[1] == 1) {
-		element1 = document.getElementById("editPhone");
-		element1.classList.toggle("invalidBorder");
-		invalidInput[1] = 0;
-	}
-	
 	if ((eName == null || eName == "") || (ePhone == null || ePhone == "") || (eEmail == null || eEmail == ""))
 	{
 		document.getElementById("colorAddResult").innerHTML = "Name/Phone/Email cannot be empty";
@@ -266,7 +238,7 @@ function editContact()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				//document.getElementById("colorAddResult").innerHTML = "Color has been added";
+				document.getElementById("colorAddResult").innerHTML = "Contact has been updated";
 			}
 		};
 		//window.location.href ="contact.html";
@@ -278,7 +250,7 @@ function editContact()
 		document.getElementById("colorAddResult").innerHTML = err.message;
 		window.location.href = "contact.html";
 	}
-	window.location.href = "contact.html";
+	//window.open("contact.html");
 }
 function goToEdit(updateParam)
 {
