@@ -138,6 +138,37 @@ function editContact()
 	let eEmail = document.getElementById("editEmail").value;
 
 	let element1;
+	if (/^\s/.test(eName) || /\s$/.test(eName))
+	{
+		document.getElementById("colorAddResult").innerHTML = "Name cannot start or end with a space";
+		if (invalidInput[0] == 0) {
+			element1 = document.getElementById("editName");
+			element1.classList.toggle("invalidBorder");
+			invalidInput[0] = 1;
+		}
+		return;
+	}
+	if (invalidInput[0] == 1) {
+		element1 = document.getElementById("editName");
+		element1.classList.toggle("invalidBorder");
+		invalidInput[0] = 0;
+	}
+	if (/^\s/.test(ePhone) || /\s$/.test(ePhone))
+	{
+		document.getElementById("colorAddResult").innerHTML = "Phone # cannot start or end with a space";
+		if (invalidInput[1] == 0) {
+			element1 = document.getElementById("editPhone");
+			element1.classList.toggle("invalidBorder");
+			invalidInput[1] = 1;
+		}
+		return;
+	}
+	if (invalidInput[1] == 1) {
+		element1 = document.getElementById("editPhone");
+		element1.classList.toggle("invalidBorder");
+		invalidInput[1] = 0;
+	}
+	
 	if ((eName == null || eName == "") || (ePhone == null || ePhone == "") || (eEmail == null || eEmail == ""))
 	{
 		document.getElementById("colorAddResult").innerHTML = "Name/Phone/Email cannot be empty";
