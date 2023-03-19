@@ -247,7 +247,7 @@ function editContact()
 		document.getElementById("colorAddResult").innerHTML = err.message;
 		window.location.href = "contact.html";
 	}
-	window.open("contact.html");
+	window.location.href = "contact.html";
 }
 function goToEdit(updateParam)
 {
