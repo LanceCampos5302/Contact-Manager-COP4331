@@ -136,6 +136,8 @@ function editContact()
 	let eName = document.getElementById("editName").value;
 	let ePhone = document.getElementById("editPhone").value;
 	let eEmail = document.getElementById("editEmail").value;
+	document.getElementById("colorAddResult").innerHTML = "";
+	document.getElementById("colorAddResultSuccess").innerHTML = "";
 
 	let element1;
 	if (/^\s/.test(eName) || /\s$/.test(eName))
