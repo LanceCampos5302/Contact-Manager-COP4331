@@ -269,7 +269,7 @@ function editContact()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				document.getElementById("colorAddResult").innerHTML = "Contact has been updated";
+				document.getElementById("colorAddResultSuccess").innerHTML = "Contact has been updated";
 			}
 		};
 		//window.location.href ="contact.html";
