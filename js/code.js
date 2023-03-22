@@ -113,6 +113,8 @@ function deleteContact(deleteParam)
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
+				 document.getElementById("colorAddResult").innerHTML = "";
+        document.getElementById("colorAddResultSuccess").innerHTML = "";
 				document.getElementById("colorAddResultSuccess").innerHTML = "Contact has been deleted";
 			}
 			searchContact();
