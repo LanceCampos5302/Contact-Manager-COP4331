@@ -386,7 +386,7 @@ function searchContact()
 					contactInfo[0] = tmp2;
 
 					colorList += "<div id='contactBackground' class='contactBackground'>" + "<div class='infoBackground'>" + contactInfo[0] + "</div>" + "<div class='infoBackground'>" + contactInfo[1] + "</div>" + "<div class='infoBackground'>" + contactInfo[2] + "</div>" + "</div>";
-					colorList += "<div id='contactButtons'><button type='button' onclick = 'editCacheCookie("+Number(i)+");goToEdit("+Number(jsonObject.id[i])+");'>Edit</button>";
+					colorList += " <div id='contactButtons'><button type='button' onclick = 'editCacheCookie("+Number(i)+");goToEdit("+Number(jsonObject.id[i])+");'>Edit</button>";
 					colorList += " <button type='button' onclick = 'deleteContact("+Number(jsonObject.id[i])+");'>Delete</button></div>";
 					
 					if (i + 1 < jsonObject.results.length)
