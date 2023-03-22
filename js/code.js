@@ -142,79 +142,79 @@ function editContact()
 	document.getElementById("colorAddResultSuccess").innerHTML = "";
 
 	let element1;
-	if ((/^\s/.test(newName) || /\s$/.test(newName)) || (/^\s/.test(newPhone) || /\s$/.test(newPhone)))
+	if ((/^\s/.test(eName) || /\s$/.test(eName)) || (/^\s/.test(ePhone) || /\s$/.test(ePhone)))
 	{
-		if (/^\s/.test(newName) || /\s$/.test(newName))
+		if (/^\s/.test(eName) || /\s$/.test(eName))
 		{
 			document.getElementById("colorAddResult").innerHTML = "Name cannot start or end with a space";
 			if (invalidInput[0] == 0) {
-				element1 = document.getElementById("contactName");
+				element1 = document.getElementById("editName");
 				element1.classList.toggle("invalidBorder");
 				invalidInput[0] = 1;
 			}
 			return;
 		}
 		if (invalidInput[0] == 1) {
-			element1 = document.getElementById("contactName");
+			element1 = document.getElementById("editName");
 			element1.classList.toggle("invalidBorder");
 			invalidInput[0] = 0;
 		}
-		if (/^\s/.test(newPhone) || /\s$/.test(newPhone))
+		if (/^\s/.test(ePhone) || /\s$/.test(ePhone))
 		{
 			document.getElementById("colorAddResult").innerHTML = "Phone # cannot start or end with a space";
 			if (invalidInput[1] == 0) {
-				element1 = document.getElementById("contactPhone");
+				element1 = document.getElementById("editPhone");
 				element1.classList.toggle("invalidBorder");
 				invalidInput[1] = 1;
 			}
 			return;
 		}
 		if (invalidInput[1] == 1) {
-			element1 = document.getElementById("contactPhone");
+			element1 = document.getElementById("editPhone");
 			element1.classList.toggle("invalidBorder");
 			invalidInput[1] = 0;
 		}
 	}
 
-	if ((newName.indexOf(',') > -1) || (newPhone.indexOf(',') > -1) || (newEmail.indexOf(',') > -1))
+	if ((eName.indexOf(',') > -1) || (ePhone.indexOf(',') > -1) || (eEmail.indexOf(',') > -1))
 	{
 		document.getElementById("colorAddResult").innerHTML = "Name/Phone/Email cannot contain a comma";
-		if (newName.indexOf(',') > -1)
+		if (eName.indexOf(',') > -1)
 		{
 			if (invalidInput[0] == 0) {
-				element1 = document.getElementById("contactName");
+				element1 = document.getElementById("editName");
 				element1.classList.toggle("invalidBorder");
 				invalidInput[0] = 1;
 			}
 		}
 		else if (invalidInput[0] == 1) {
-			element1 = document.getElementById("contactName");
+			element1 = document.getElementById("editName");
 			element1.classList.toggle("invalidBorder");
 			invalidInput[0] = 0;
 		}
-		if (newPhone.indexOf(',') > -1)
+		if (ePhone.indexOf(',') > -1)
 		{
 			if (invalidInput[1] == 0) {
-				element1 = document.getElementById("contactPhone");
+				element1 = document.getElementById("editPhone");
 				element1.classList.toggle("invalidBorder");
 				invalidInput[1] = 1;
 			}
 		}
 		else if (invalidInput[1] == 1) {
-			element1 = document.getElementById("contactPhone");
+			element1 = document.getElementById("editPhone");
 			element1.classList.toggle("invalidBorder");
 			invalidInput[1] = 0;
 		}
-		if (newEmail.indexOf(',') > -1)
+		if (eEmail.indexOf(',') > -1)
 		{
 			if (invalidInput[2] == 0) {
-				element1 = document.getElementById("contactEmail");
+				element1 = document.getElementById("editEmail");
 				element1.classList.toggle("invalidBorder");
 				invalidInput[2] = 1;
 			}
 		}
 		else if (invalidInput[2] == 1) {
-			element1 = document.getElementById("contactEmail");
+			element1 = document.getElementById("editEmail");
 			element1.classList.toggle("invalidBorder");
 			invalidInput[2] = 0;
 		}
