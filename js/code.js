@@ -359,7 +359,36 @@ function searchContact()
 					{
 						colorList += "<hr class='contactSeparator'>";
 					}
-					colorList += "<div id='contactBackground' class='contactBackground'>" + jsonObject.results[i] + "</div>" + " <div id='contactButtons'><button type='button' onclick = 'editCacheCookie("+Number(i)+");goToEdit("+Number(jsonObject.id[i])+");'>Edit</button> <button type='button' onclick = 'deleteContact("+Number(jsonObject.id[i])+");'>Delete</button></div>";
+					
+										let j = 0;
+					let tmp = jsonObject.results[i].split(" ");
+					while (j < tmp.length) {
+						if (tmp[j] === "") {
+							tmp.splice(j, 1);
+						}
+						else {
+							++j;
+						}
+					}
+					let contactInfo = [3];
+					contactInfo[2] = tmp.pop();
+					contactInfo[1] = tmp.pop();
+					
+					let tmp2 = "";
+					for (let k = 0; k < tmp.length; k++)
+					{
+						tmp2 += tmp[k];
+						if (k + 1 < tmp.length) {
+							tmp2 += " ";
+						}
+					}
+
+					contactInfo[0] = tmp2;
+
+					colorList += "<div id='contactBackground' class='contactBackground'>" + "<div class='infoBackground'>" + contactInfo[0] + "</div>" + "<div class='infoBackground'>" + contactInfo[1] + "</div>" + "<div class='infoBackground'>" + contactInfo[2] + "</div>" + "</div>";
+					colorList += "<div id='contactButtons'><button type='button' onclick = 'editCacheCookie("+Number(i)+");goToEdit("+Number(jsonObject.id[i])+");'>Edit</button>";
+					colorList += " <button type='button' onclick = 'deleteContact("+Number(jsonObject.id[i])+");'>Delete</button></div>";
+					
 					if (i + 1 < jsonObject.results.length)
 					{
 						colorList += "<hr class='contactSeparator'>";
